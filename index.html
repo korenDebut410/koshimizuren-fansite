@@ -127,18 +127,9 @@
     }
 
     @keyframes openLight{
-      0%{
-        opacity:0;
-        transform:translateX(-50%) scaleX(0);
-      }
-      18%{
-        opacity:1;
-        transform:translateX(-50%) scaleX(1);
-      }
-      100%{
-        opacity:1;
-        transform:translateX(-50%) scaleX(900);
-      }
+      0%{ opacity:0; transform:translateX(-50%) scaleX(0); }
+      18%{ opacity:1; transform:translateX(-50%) scaleX(1); }
+      100%{ opacity:1; transform:translateX(-50%) scaleX(900); }
     }
 
     .white-flash{
@@ -260,14 +251,9 @@
 
     .hero{
       min-height:100vh;
-      padding:80px 18px 70px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      background:transparent;
       position:relative;
       overflow:hidden;
+      background:#000;
     }
 
     .hero-video{
@@ -286,16 +272,17 @@
       position:absolute;
       inset:0;
       z-index:1;
-      background:rgba(255,244,180,.1);
+      background:rgba(255,244,180,.08);
       pointer-events:none;
     }
 
     .video-profile{
       position:absolute;
-      right:7vw;
-      bottom:10vh;
+      right:50%;
+      bottom:18vh;
+      transform:translateX(50%);
       z-index:4;
-      width:min(420px,82vw);
+      width:min(430px,84vw);
       color:#fff;
       text-shadow:0 2px 12px rgba(0,0,0,.65);
       font-family:'Noto Sans JP',sans-serif;
@@ -339,40 +326,35 @@
       padding-bottom:5px;
     }
 
-    .profile-list dt{
-      margin:0;
-    }
-
+    .profile-list dt,
     .profile-list dd{
       margin:0;
     }
 
-    .card{
+    .top-card-section{
       position:relative;
       z-index:3;
+      padding:44px 18px 54px;
+      background:
+        linear-gradient(
+          180deg,
+          #fffef8 0%,
+          #fff8d8 44%,
+          #ffe88f 100%
+        );
+    }
+
+    .card{
       width:min(920px,92vw);
-      border:2px solid rgba(255,255,255,.55);
+      margin:0 auto;
+      border:2px solid rgba(255,255,255,.85);
       border-radius:34px;
       padding:42px 22px 36px;
-      background:rgba(255,255,255,.16);
-      box-shadow:0 18px 60px rgba(74,47,24,.12);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
-      text-align:center;
-      margin-top:auto;
-    }
-
-    section.content-section{
-      position:relative;
-      z-index:3;
-      padding:80px 20px;
-      background:rgba(255,253,246,.58);
+      background:rgba(255,255,255,.68);
+      box-shadow:0 18px 60px rgba(74,47,24,.14);
       backdrop-filter:blur(8px);
       -webkit-backdrop-filter:blur(8px);
-    }
-
-    section.content-section:nth-of-type(even){
-      background:rgba(255,245,207,.56);
+      text-align:center;
     }
 
     h1{
@@ -404,12 +386,23 @@
     .menu a{
       text-decoration:none;
       color:var(--brown);
-      background:rgba(255,255,255,.62);
+      background:rgba(255,255,255,.72);
       border:1px solid rgba(255,159,28,.45);
       border-radius:20px;
       padding:18px 12px;
       font-weight:900;
       box-shadow:0 8px 18px rgba(74,47,24,.08);
+    }
+
+    section.content-section{
+      position:relative;
+      z-index:3;
+      padding:80px 20px;
+      background:rgba(255,253,246,.95);
+    }
+
+    section.content-section:nth-of-type(even){
+      background:rgba(255,245,207,.95);
     }
 
     .section-inner{
@@ -430,16 +423,11 @@
     }
 
     @media(max-width:520px){
-      .hero{
-        justify-content:flex-end;
-        padding:74px 14px 38px;
-      }
-
       .video-profile{
-        right:18px;
-        left:18px;
-        bottom:42vh;
-        width:auto;
+        right:50%;
+        bottom:14vh;
+        transform:translateX(50%);
+        width:86vw;
       }
 
       .profile-list div{
@@ -450,7 +438,7 @@
 
       .card{
         border-radius:26px;
-        padding:28px 16px 24px;
+        padding:34px 16px 28px;
       }
     }
   </style>
@@ -480,8 +468,7 @@
       <a href="#profile">PROFILE</a>
       <a href="#vote">VOTE</a>
       <a href="#movie">MOVIE</a>
-      <a href="#sns">SNS</a>
-      <a href="#archive">ARCHIVE</a>
+      <a href="#official">公式サイト</a>
     </nav>
 
     <section class="hero">
@@ -503,7 +490,9 @@
           <div><dt>私を表すキーワード</dt><dd>猫</dd></div>
         </dl>
       </div>
+    </section>
 
+    <section class="top-card-section">
       <div class="card">
         <h1>小清水蓮</h1>
         <p class="sub">宮崎から世界へ。</p>
@@ -512,8 +501,7 @@
           <a href="#profile">PROFILE</a>
           <a href="#vote">VOTE</a>
           <a href="#movie">MOVIE</a>
-          <a href="#sns">SNS</a>
-          <a href="#archive">ARCHIVE</a>
+          <a href="#official">公式サイト</a>
         </nav>
       </div>
     </section>
@@ -539,17 +527,10 @@
       </div>
     </section>
 
-    <section class="content-section" id="sns">
+    <section class="content-section" id="official">
       <div class="section-inner">
-        <h2>SNS</h2>
-        <p>SNSリンクやハッシュタグをここに入れます。</p>
-      </div>
-    </section>
-
-    <section class="content-section" id="archive">
-      <div class="section-inner">
-        <h2>ARCHIVE</h2>
-        <p>蓮くんの記録やまとめをここに入れます。</p>
+        <h2>公式サイト</h2>
+        <p>公式サイトへのリンクをここに入れます。</p>
       </div>
     </section>
   </main>
