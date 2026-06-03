@@ -279,7 +279,7 @@
     .video-profile{
       position:absolute;
       right:50%;
-      bottom:18vh;
+      bottom:28vh;
       transform:translateX(50%);
       z-index:4;
       width:min(430px,84vw);
@@ -289,18 +289,52 @@
     }
 
     .video-profile h2{
+      position:relative;
       margin:0 0 10px;
       font-size:clamp(1.6rem,5vw,2.4rem);
       letter-spacing:.08em;
-      border-bottom:1px solid rgba(255,255,255,.85);
       padding-bottom:8px;
+      opacity:0;
+      transform:translateY(12px);
+      animation: profileFade .75s ease forwards 6.55s;
+    }
+
+    .video-profile h2::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:1px;
+      background:rgba(255,255,255,.85);
+      transform:scaleX(0);
+      transform-origin:left center;
+      animation: lineGrow .7s ease forwards 6.85s;
     }
 
     .video-profile .name{
+      position:relative;
       margin:0 0 16px;
+      padding-bottom:6px;
       font-size:clamp(1.45rem,5.2vw,2.35rem);
       font-weight:900;
       letter-spacing:.06em;
+      opacity:0;
+      transform:translateY(12px);
+      animation: profileFade .75s ease forwards 7.2s;
+    }
+
+    .video-profile .name::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:1px;
+      background:rgba(255,255,255,.28);
+      transform:scaleX(0);
+      transform-origin:left center;
+      animation: lineGrow .7s ease forwards 7.5s;
     }
 
     .video-profile .name span{
@@ -319,11 +353,61 @@
     }
 
     .profile-list div{
+      position:relative;
       display:grid;
       grid-template-columns:8.5em 1fr;
       gap:8px;
-      border-bottom:1px solid rgba(255,255,255,.22);
       padding-bottom:5px;
+      opacity:0;
+      transform:translateY(12px);
+      animation: profileFade .7s ease forwards;
+    }
+
+    .profile-list div::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:1px;
+      background:rgba(255,255,255,.24);
+      transform:scaleX(0);
+      transform-origin:left center;
+      animation: lineGrow .65s ease forwards;
+    }
+
+    .profile-list div:nth-child(1){ animation-delay:7.75s; }
+    .profile-list div:nth-child(1)::after{ animation-delay:8.05s; }
+
+    .profile-list div:nth-child(2){ animation-delay:8.05s; }
+    .profile-list div:nth-child(2)::after{ animation-delay:8.35s; }
+
+    .profile-list div:nth-child(3){ animation-delay:8.35s; }
+    .profile-list div:nth-child(3)::after{ animation-delay:8.65s; }
+
+    .profile-list div:nth-child(4){ animation-delay:8.65s; }
+    .profile-list div:nth-child(4)::after{ animation-delay:8.95s; }
+
+    .profile-list div:nth-child(5){ animation-delay:8.95s; }
+    .profile-list div:nth-child(5)::after{ animation-delay:9.25s; }
+
+    .profile-list div:nth-child(6){ animation-delay:9.25s; }
+    .profile-list div:nth-child(6)::after{ animation-delay:9.55s; }
+
+    .profile-list div:nth-child(7){ animation-delay:9.55s; }
+    .profile-list div:nth-child(7)::after{ animation-delay:9.85s; }
+
+    @keyframes profileFade{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes lineGrow{
+      to{
+        transform:scaleX(1);
+      }
     }
 
     .profile-list dt,
@@ -425,7 +509,7 @@
     @media(max-width:520px){
       .video-profile{
         right:50%;
-        bottom:24vh;
+        bottom:22vh;
         transform:translateX(50%);
         width:86vw;
       }
