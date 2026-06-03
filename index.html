@@ -279,7 +279,7 @@
     .video-profile{
       position:absolute;
       right:50%;
-      bottom:32vh;
+      bottom:34vh;
       transform:translateX(50%);
       z-index:4;
       width:min(430px,84vw);
@@ -378,22 +378,16 @@
 
     .profile-list div:nth-child(1){ animation-delay:7.75s; }
     .profile-list div:nth-child(1)::after{ animation-delay:8.05s; }
-
     .profile-list div:nth-child(2){ animation-delay:8.05s; }
     .profile-list div:nth-child(2)::after{ animation-delay:8.35s; }
-
     .profile-list div:nth-child(3){ animation-delay:8.35s; }
     .profile-list div:nth-child(3)::after{ animation-delay:8.65s; }
-
     .profile-list div:nth-child(4){ animation-delay:8.65s; }
     .profile-list div:nth-child(4)::after{ animation-delay:8.95s; }
-
     .profile-list div:nth-child(5){ animation-delay:8.95s; }
     .profile-list div:nth-child(5)::after{ animation-delay:9.25s; }
-
     .profile-list div:nth-child(6){ animation-delay:9.25s; }
     .profile-list div:nth-child(6)::after{ animation-delay:9.55s; }
-
     .profile-list div:nth-child(7){ animation-delay:9.55s; }
     .profile-list div:nth-child(7)::after{ animation-delay:9.85s; }
 
@@ -413,6 +407,40 @@
     .profile-list dt,
     .profile-list dd{
       margin:0;
+    }
+
+    .profile-stamp{
+      position:absolute;
+      left:50%;
+      top:50%;
+      z-index:6;
+      width:min(260px,58vw);
+      transform:translate(-50%,-50%) rotate(-10deg) scale(2.2);
+      opacity:0;
+      pointer-events:none;
+      filter:drop-shadow(0 12px 24px rgba(0,0,0,.28));
+    }
+
+    .profile-stamp.show{
+      animation: stampPop .55s cubic-bezier(.2,1.55,.45,1) forwards;
+    }
+
+    @keyframes stampPop{
+      0%{
+        opacity:0;
+        transform:translate(-50%,-50%) rotate(-18deg) scale(2.4);
+      }
+      55%{
+        opacity:1;
+        transform:translate(-50%,-50%) rotate(-8deg) scale(.88);
+      }
+      75%{
+        transform:translate(-50%,-50%) rotate(-10deg) scale(1.08);
+      }
+      100%{
+        opacity:1;
+        transform:translate(-50%,-50%) rotate(-10deg) scale(1);
+      }
     }
 
     .top-card-section{
@@ -509,7 +537,7 @@
     @media(max-width:520px){
       .video-profile{
         right:50%;
-        bottom:22vh;
+        bottom:28vh;
         transform:translateX(50%);
         width:86vw;
       }
@@ -574,6 +602,8 @@
           <div><dt>私を表すキーワード</dt><dd>猫</dd></div>
         </dl>
       </div>
+
+      <img class="profile-stamp" id="profileStamp" src="22BB8031-4E52-457A-B771-342481C25B3A.png" alt="PROFILEスタンプ">
     </section>
 
     <section class="top-card-section">
@@ -624,6 +654,9 @@
     const site = document.getElementById('site');
     const menuBtn = document.getElementById('menuBtn');
     const sideMenu = document.getElementById('sideMenu');
+    const profileStamp = document.getElementById('profileStamp');
+    const hero = document.querySelector('.hero');
+    let stampShown = false;
 
     function enterSite(){
       opening.classList.add('opening-light');
@@ -643,6 +676,15 @@
 
     window.addEventListener('load', () => {
       setTimeout(enterSite, 3900);
+    });
+
+    window.addEventListener('scroll', () => {
+      const triggerPoint = hero.offsetHeight * 0.2;
+
+      if (!stampShown && window.scrollY > triggerPoint) {
+        profileStamp.classList.add('show');
+        stampShown = true;
+      }
     });
 
     menuBtn.addEventListener('click', () => {
