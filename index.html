@@ -277,17 +277,17 @@
     }
 
     .video-profile{
-  position:absolute;
-  right:50%;
-  bottom:43vh;
-  transform:translateX(50%) scale(0.85);
-  transform-origin:center;
-  z-index:4;
-  width:min(390px,78vw);
-  color:#fff;
-  text-shadow:0 2px 12px rgba(0,0,0,.65);
-  font-family:'Noto Sans JP',sans-serif;
-}
+      position:absolute;
+      right:50%;
+      bottom:43vh;
+      transform:translateX(50%) scale(0.85);
+      transform-origin:center;
+      z-index:4;
+      width:min(390px,78vw);
+      color:#fff;
+      text-shadow:0 2px 12px rgba(0,0,0,.65);
+      font-family:'Noto Sans JP',sans-serif;
+    }
 
     .video-profile h2{
       position:relative;
@@ -471,7 +471,7 @@
     .menu{
       margin-top:34px;
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:12px;
     }
 
@@ -515,97 +515,93 @@
     }
 
     .vote-rules{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:16px;
-  margin:30px 0 34px;
-  align-items:start;
-}
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+      margin:30px 0 34px;
+      align-items:start;
+    }
 
-.vote-rules img{
-  width:100%;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
+    .vote-rules img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+    }
 
-.vote-button{
-  display:flex;
-  justify-content:center;
-  margin-top:8px;
-}
+    .vote-button{
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+    }
 
-.vote-button img{
-  width:min(160px,42vw);
-  transition:.25s ease;
-  filter:drop-shadow(0 8px 16px rgba(0,0,0,.18));
-}
+    .vote-button img{
+      width:min(160px,42vw);
+      transition:.25s ease;
+      filter:drop-shadow(0 8px 16px rgba(0,0,0,.18));
+    }
 
-.vote-button:hover img{
-  transform:scale(1.05);
-}
+    .vote-button:hover img{
+      transform:scale(1.05);
+    }
 
-/* PROFILE */
+    .profile-section{
+      text-align:center;
+    }
 
-.profile-section{
-  text-align:center;
-}
+    .profile-main-title{
+      margin:0 0 12px;
+      font-size:1.6rem;
+      font-weight:900;
+      color:#6b3f17;
+    }
 
-.profile-main-title{
-  margin:0 0 12px;
-  font-size:1.6rem;
-  font-weight:900;
-  color:#6b3f17;
-}
+    .profile-video{
+      width:min(420px,90vw);
+      margin:24px auto 44px;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 12px 28px rgba(0,0,0,.15);
+      display:block;
+    }
 
-.profile-video{
-  width:min(420px,90vw);
-  margin:24px auto 44px;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 12px 28px rgba(0,0,0,.15);
-}
+    .profile-video video{
+      width:100%;
+      display:block;
+    }
 
-.profile-video video{
-  width:100%;
-  display:block;
-}
+    .profile-image{
+      width:min(500px,95vw);
+      border-radius:24px;
+      box-shadow:0 12px 28px rgba(0,0,0,.15);
+    }
 
-.hand-profile{
-  margin-top:36px;
-}
+    .offshot-title{
+      margin:50px 0 12px;
+      font-size:1.6rem;
+      font-weight:900;
+      color:#8a5418;
+    }
 
-.hand-profile img{
-  width:min(500px,95vw);
-  border-radius:24px;
-  box-shadow:0 12px 28px rgba(0,0,0,.15);
-}
+    .offshot-scroll{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding:20px 0 28px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
 
-.offshot-title{
-  margin:50px 0 12px;
-  font-size:1.6rem;
-  font-weight:900;
-  color:#8a5418;
-}
+    .offshot-scroll img{
+      width:340px;
+      flex-shrink:0;
+      border-radius:24px;
+      scroll-snap-align:center;
+      box-shadow:0 12px 24px rgba(0,0,0,.15);
+    }
 
-.offshot-scroll{
-  display:flex;
-  gap:18px;
-  overflow-x:auto;
-  padding:20px 0 28px;
-  scroll-snap-type:x mandatory;
-}
-
-.offshot-scroll img{
-  width:340px;
-  flex-shrink:0;
-  border-radius:24px;
-  scroll-snap-align:center;
-  box-shadow:0 12px 24px rgba(0,0,0,.15);
-}
-
-.movie-section{
-  background:linear-gradient(180deg,#fff8d8 0%,#fffef8 100%);
-}
+    .movie-section{
+      background:linear-gradient(180deg,#fff8d8 0%,#fffef8 100%);
+    }
 
     .movie-category{
       margin:34px 0 18px;
@@ -615,6 +611,7 @@
       color:#8a5418;
       border-left:8px solid var(--mango);
       padding-left:12px;
+      text-align:left;
     }
 
     .movie-list{
@@ -658,7 +655,7 @@
       .video-profile{
         right:50%;
         bottom:34vh;
-        transform:translateX(50%);
+        transform:translateX(50%) scale(0.85);
         width:78vw;
       }
 
@@ -671,6 +668,15 @@
       .card{
         border-radius:26px;
         padding:34px 16px 28px;
+      }
+
+      .vote-rules{
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .offshot-scroll img{
+        width:280px;
       }
 
       .movie-card{
@@ -702,6 +708,7 @@
 
     <nav class="side-menu" id="sideMenu">
       <a href="#vote">VOTE</a>
+      <a href="#profile">PROFILE</a>
       <a href="#movie">MOVIE</a>
       <a href="#official">公式サイト</a>
     </nav>
@@ -736,6 +743,7 @@
 
         <nav class="menu">
           <a href="#vote">VOTE</a>
+          <a href="#profile">PROFILE</a>
           <a href="#movie">MOVIE</a>
           <a href="#official">公式サイト</a>
         </nav>
@@ -743,93 +751,95 @@
     </section>
 
     <section class="content-section" id="vote">
-  <div class="section-inner">
-    <h2>VOTE</h2>
+      <div class="section-inner">
+        <h2>VOTE</h2>
 
-    <div class="vote-rules">
-      <img src="voterule.JPG" alt="投票方法1">
-      <img src="voterule2.JPG" alt="投票方法2">
-    </div>
+        <div class="vote-rules">
+          <img src="voterule.JPG" alt="投票方法1">
+          <img src="voterule2.JPG" alt="投票方法2">
+        </div>
 
-    <a class="vote-button" href="https://vote.produce101.jp/" target="_blank" rel="noopener">
-      <img src="votestamp.PNG" alt="投票はこちら">
-    </a>
-  </div>
-</section>
+        <a class="vote-button" href="https://vote.produce101.jp/" target="_blank" rel="noopener">
+          <img src="votestamp.PNG" alt="投票はこちら">
+        </a>
+      </div>
+    </section>
 
-<section class="content-section profile-section" id="profile">
-  <div class="section-inner">
+    <section class="content-section profile-section" id="profile">
+      <div class="section-inner">
 
-    <h2>PROFILE</h2>
+        <h2>PROFILE</h2>
 
-    <h3 class="movie-category">小清水蓮 KO.REN</h3>
+        <h3 class="profile-main-title">小清水蓮 KO.REN</h3>
 
-    <video controls class="profile-video">
-      <source src="finalkoren.MP4" type="video/mp4">
-    </video>
+        <div class="profile-video">
+          <video controls playsinline>
+            <source src="finalkoren.MP4" type="video/mp4">
+          </video>
+        </div>
 
-    <h3 class="movie-category">手書きPROFILE</h3>
+        <h3 class="offshot-title">手書きPROFILE</h3>
 
-    <img src="profileko.ren.JPG" class="profile-image">
+        <img src="profileko.ren.JPG" class="profile-image" alt="手書きPROFILE">
 
-    <h3 class="movie-category">Oᖴᖴ ՏᕼOT</h3>
+        <h3 class="offshot-title">Oᖴᖴ ՏᕼOT</h3>
 
-    <div class="scroll-gallery">
-      <img src="offshot1.JPG">
-      <img src="offshot2.JPG">
-      <img src="offshot3.JPG">
-    </div>
+        <div class="offshot-scroll">
+          <img src="offshot1.JPG" alt="OFF SHOT 1">
+          <img src="offshot2.JPG" alt="OFF SHOT 2">
+          <img src="offshot3.JPG" alt="OFF SHOT 3">
+        </div>
 
-    <h3 class="movie-category">小清水蓮の10問10答</h3>
+        <h3 class="offshot-title">小清水蓮の10問10答</h3>
 
-    <div class="scroll-gallery">
-      <img src="korenquestion1.JPG">
-      <img src="korenquestion2.JPG">
-      <img src="korenquestion3.JPG">
-      <img src="korenquestion4.JPG">
-      <img src="korenquestion5.JPG">
-      <img src="korenquestion6.JPG">
-    </div>
+        <div class="offshot-scroll">
+          <img src="korenquestion1.JPG" alt="小清水蓮の10問10答 1">
+          <img src="korenquestion2.JPG" alt="小清水蓮の10問10答 2">
+          <img src="korenquestion3.JPG" alt="小清水蓮の10問10答 3">
+          <img src="korenquestion4.JPG" alt="小清水蓮の10問10答 4">
+          <img src="korenquestion5.JPG" alt="小清水蓮の10問10答 5">
+          <img src="korenquestion6.JPG" alt="小清水蓮の10問10答 6">
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
-<section class="content-section movie-section" id="movie">
-  <div class="section-inner">
-    <h2>MOVIE</h2>
+    <section class="content-section movie-section" id="movie">
+      <div class="section-inner">
+        <h2>MOVIE</h2>
 
-    <div class="movie-list">
-      <a class="movie-card" href="https://youtu.be/O6Inaz8Tmpg?si=ugIsZrcj_zUzgAwT" target="_blank" rel="noopener">
-        <img src="debut.JPG" alt="デビュー公約 | KO.REN（小清水蓮）">
-        <p>デビュー公約 | KO.REN（小清水蓮）</p>
-      </a>
-    </div>
+        <div class="movie-list">
+          <a class="movie-card" href="https://youtu.be/O6Inaz8Tmpg?si=ugIsZrcj_zUzgAwT" target="_blank" rel="noopener">
+            <img src="debut.JPG" alt="デビュー公約 | KO.REN（小清水蓮）">
+            <p>デビュー公約 | KO.REN（小清水蓮）</p>
+          </a>
+        </div>
 
-    <h3 class="movie-category">推しカメラ</h3>
+        <h3 class="movie-category">推しカメラ</h3>
 
-    <div class="movie-list">
-      <a class="movie-card" href="https://youtu.be/Bcth0WHVnDg?si=fMxDyYdTLvDZqW3K" target="_blank" rel="noopener">
-        <img src="Nekoサムネ.JPG" alt="コンセプト評価 推しカメラ">
-        <p>コンセプト評価 推しカメラ｜KO.REN（小清水蓮） ♫Neko（ねこ）</p>
-      </a>
+        <div class="movie-list">
+          <a class="movie-card" href="https://youtu.be/Bcth0WHVnDg?si=fMxDyYdTLvDZqW3K" target="_blank" rel="noopener">
+            <img src="Nekoサムネ.JPG" alt="コンセプト評価 推しカメラ">
+            <p>コンセプト評価 推しカメラ｜KO.REN（小清水蓮） ♫Neko（ねこ）</p>
+          </a>
 
-      <a class="movie-card" href="https://youtu.be/J7PNAfCtQKc?si=3gGqD6AJos9em8B5" target="_blank" rel="noopener">
-        <img src="BECLASSICサムネ.JPG" alt="BE CLASSIC">
-        <p>ポジション評価 推しカメラ｜KO.REN（小清水蓮） JO1 ♫BE CLASSIC</p>
-      </a>
+          <a class="movie-card" href="https://youtu.be/J7PNAfCtQKc?si=3gGqD6AJos9em8B5" target="_blank" rel="noopener">
+            <img src="BECLASSICサムネ.JPG" alt="BE CLASSIC">
+            <p>ポジション評価 推しカメラ｜KO.REN（小清水蓮） JO1 ♫BE CLASSIC</p>
+          </a>
 
-      <a class="movie-card" href="https://youtu.be/MnwWzUlB8TA?si=dlZtudsGNNF3SNc8" target="_blank" rel="noopener">
-        <img src="BiteMeサムネ.JPG" alt="Bite Me">
-        <p>グループバトル推しカメラ｜KO.REN（小清水蓮） | ENHYPEN ♫Bite Me</p>
-      </a>
+          <a class="movie-card" href="https://youtu.be/MnwWzUlB8TA?si=dlZtudsGNNF3SNc8" target="_blank" rel="noopener">
+            <img src="BiteMeサムネ.JPG" alt="Bite Me">
+            <p>グループバトル推しカメラ｜KO.REN（小清水蓮） | ENHYPEN ♫Bite Me</p>
+          </a>
 
-      <a class="movie-card" href="https://youtu.be/JyjjPI3Iyrs?si=jhbUwgmdV_bqvLlp" target="_blank" rel="noopener">
-        <img src="新世界サムネ.JPG" alt="新世界">
-        <p>推しカメラ｜KO.REN（小清水蓮）新世界（SHINSEKAI）</p>
-      </a>
-    </div>
-  </div>
-</section>
+          <a class="movie-card" href="https://youtu.be/JyjjPI3Iyrs?si=jhbUwgmdV_bqvLlp" target="_blank" rel="noopener">
+            <img src="新世界サムネ.JPG" alt="新世界">
+            <p>推しカメラ｜KO.REN（小清水蓮）新世界（SHINSEKAI）</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section" id="official">
       <div class="section-inner">
