@@ -890,17 +890,40 @@
     });
 
     menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      sideMenu.classList.toggle('open');
-    });
+  menuBtn.classList.toggle('active');
+  sideMenu.classList.toggle('open');
+});
 
-    sideMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        sideMenu.classList.remove('open');
-      });
+sideMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuBtn.classList.remove('active');
+    sideMenu.classList.remove('open');
+  });
+});
+
+/* PROFILE動画 自動再生 */
+const profileMovie = document.getElementById('profileMovie');
+
+if (profileMovie) {
+
+  const profileMovieObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        profileMovie.play().catch(() => {});
+      } else {
+        profileMovie.pause();
+      }
+
     });
-  </script>
+  }, {
+    threshold: 0.45
+  });
+
+  profileMovieObserver.observe(profileMovie);
+}
+
+</script>
 
 </body>
 </html>
