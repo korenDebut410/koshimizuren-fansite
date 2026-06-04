@@ -715,6 +715,35 @@
   justify-content:flex-start;
 }
 
+/* 肉球ハート区切りライン */
+.section-divider{
+  width:100%;
+  text-align:center;
+  margin:-34px 0 28px;
+  position:relative;
+  z-index:8;
+  pointer-events:none;
+}
+
+.section-divider img{
+  width:92%;
+  max-width:720px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  filter:drop-shadow(0 4px 6px rgba(74,47,24,.18));
+}
+
+@media(max-width:520px){
+  .section-divider{
+    margin:-26px 0 22px;
+  }
+
+  .section-divider img{
+    width:96%;
+  }
+}
+
 /* ↑ここまで追加 */
 
 </style>
@@ -784,6 +813,10 @@
       </div>
     </section>
 
+    <div class="section-divider">
+      <img src="paw-heart-line.PNG" alt="">
+    </div>
+
     <section class="content-section" id="vote">
       <div class="section-inner">
         <h2>VOTE</h2>
@@ -798,6 +831,10 @@
         </a>
       </div>
     </section>
+
+    <div class="section-divider">
+      <img src="paw-heart-line.PNG" alt="">
+    </div>
 
     <section class="content-section profile-section" id="profile">
       <div class="section-inner">
@@ -853,6 +890,10 @@
       </div>
     </section>
 
+    <div class="section-divider">
+      <img src="paw-heart-line.PNG" alt="">
+    </div>
+
     <section class="content-section movie-section" id="movie">
       <div class="section-inner">
         <h2>MOVIE</h2>
@@ -889,6 +930,10 @@
         </div>
       </div>
     </section>
+
+    <div class="section-divider">
+      <img src="paw-heart-line.PNG" alt="">
+    </div>
 
     <section class="content-section" id="official">
   <div class="section-inner">
