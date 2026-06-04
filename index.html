@@ -544,9 +544,68 @@
   transform:scale(1.05);
 }
 
-    .movie-section{
-      background:linear-gradient(180deg,#fff8d8 0%,#fffef8 100%);
-    }
+/* PROFILE */
+
+.profile-section{
+  text-align:center;
+}
+
+.profile-main-title{
+  margin:0 0 12px;
+  font-size:1.6rem;
+  font-weight:900;
+  color:#6b3f17;
+}
+
+.profile-video{
+  width:min(420px,90vw);
+  margin:24px auto 44px;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+
+.profile-video video{
+  width:100%;
+  display:block;
+}
+
+.hand-profile{
+  margin-top:36px;
+}
+
+.hand-profile img{
+  width:min(500px,95vw);
+  border-radius:24px;
+  box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+
+.offshot-title{
+  margin:50px 0 12px;
+  font-size:1.6rem;
+  font-weight:900;
+  color:#8a5418;
+}
+
+.offshot-scroll{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  padding:20px 0 28px;
+  scroll-snap-type:x mandatory;
+}
+
+.offshot-scroll img{
+  width:340px;
+  flex-shrink:0;
+  border-radius:24px;
+  scroll-snap-align:center;
+  box-shadow:0 12px 24px rgba(0,0,0,.15);
+}
+
+.movie-section{
+  background:linear-gradient(180deg,#fff8d8 0%,#fffef8 100%);
+}
 
     .movie-category{
       margin:34px 0 18px;
