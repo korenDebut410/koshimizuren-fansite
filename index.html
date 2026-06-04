@@ -299,16 +299,21 @@
       animation: profileFade .75s ease forwards 6.55s;
     }
 
-    .video-profile h2::after{
+    .video-profile h2::after,
+    .video-profile .name::after,
+    .profile-list div::after{
       content:"";
       position:absolute;
       left:0;
       bottom:0;
       width:100%;
       height:1px;
-      background:rgba(255,255,255,.85);
       transform:scaleX(0);
       transform-origin:left center;
+    }
+
+    .video-profile h2::after{
+      background:rgba(255,255,255,.85);
       animation: lineGrow .7s ease forwards 6.85s;
     }
 
@@ -325,15 +330,7 @@
     }
 
     .video-profile .name::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:0;
-      width:100%;
-      height:1px;
       background:rgba(255,255,255,.28);
-      transform:scaleX(0);
-      transform-origin:left center;
       animation: lineGrow .7s ease forwards 7.5s;
     }
 
@@ -364,15 +361,7 @@
     }
 
     .profile-list div::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:0;
-      width:100%;
-      height:1px;
       background:rgba(255,255,255,.24);
-      transform:scaleX(0);
-      transform-origin:left center;
       animation: lineGrow .65s ease forwards;
     }
 
@@ -399,9 +388,7 @@
     }
 
     @keyframes lineGrow{
-      to{
-        transform:scaleX(1);
-      }
+      to{ transform:scaleX(1); }
     }
 
     .profile-list dt,
@@ -447,13 +434,7 @@
       position:relative;
       z-index:3;
       padding:44px 18px 54px;
-      background:
-        linear-gradient(
-          180deg,
-          #fffef8 0%,
-          #fff8d8 44%,
-          #ffe88f 100%
-        );
+      background:linear-gradient(180deg,#fffef8 0%,#fff8d8 44%,#ffe88f 100%);
     }
 
     .card{
@@ -476,9 +457,7 @@
       line-height:1;
       letter-spacing:.08em;
       color:#5a3514;
-      text-shadow:
-        0 3px 0 rgba(255,255,255,.9),
-        0 10px 24px rgba(255,159,28,.22);
+      text-shadow:0 3px 0 rgba(255,255,255,.9),0 10px 24px rgba(255,159,28,.22);
     }
 
     .sub{
@@ -532,6 +511,36 @@
       margin:0;
       line-height:1.9;
       font-weight:700;
+    }
+
+    .vote-rules{
+      display:flex;
+      gap:16px;
+      margin:30px 0 40px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .vote-rules img{
+      width:min(430px,100%);
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+    }
+
+    .vote-button{
+      display:flex;
+      justify-content:center;
+      margin-top:10px;
+    }
+
+    .vote-button img{
+      width:min(320px,80vw);
+      transition:.25s ease;
+      filter:drop-shadow(0 10px 20px rgba(0,0,0,.18));
+    }
+
+    .vote-button:hover img{
+      transform:scale(1.05);
     }
 
     .movie-section{
@@ -588,9 +597,9 @@
     @media(max-width:520px){
       .video-profile{
         right:50%;
-        bottom:28vh;
+        bottom:34vh;
         transform:translateX(50%);
-        width:86vw;
+        width:78vw;
       }
 
       .profile-list div{
@@ -676,7 +685,15 @@
     <section class="content-section" id="vote">
       <div class="section-inner">
         <h2>VOTE</h2>
-        <p>投票情報や応援方法をここに入れます。</p>
+
+        <div class="vote-rules">
+          <img src="voterule.JPG" alt="投票方法1">
+          <img src="voterule2.JPG" alt="投票方法2">
+        </div>
+
+        <a class="vote-button" href="https://vote.produce101.jp/" target="_blank" rel="noopener">
+          <img src="votestamp.PNG" alt="投票はこちら">
+        </a>
       </div>
     </section>
 
@@ -684,37 +701,36 @@
       <div class="section-inner">
         <h2>MOVIE</h2>
 
-       <div class="movie-list">
-  <a class="movie-card" href="https://youtu.be/O6Inaz8Tmpg?si=ugIsZrcj_zUzgAwT" target="_blank" rel="noopener">
-    <img src="debut.JPG" alt="デビュー公約 | KO.REN（小清水蓮）">
-    <p>デビュー公約 | KO.REN（小清水蓮）</p>
-  </a>
-</div>
+        <div class="movie-list">
+          <a class="movie-card" href="https://youtu.be/O6Inaz8Tmpg?si=ugIsZrcj_zUzgAwT" target="_blank" rel="noopener">
+            <img src="debut.JPG" alt="デビュー公約 | KO.REN（小清水蓮）">
+            <p>デビュー公約 | KO.REN（小清水蓮）</p>
+          </a>
+        </div>
 
-<h3 class="movie-category">推しカメラ</h3>
+        <h3 class="movie-category">推しカメラ</h3>
 
-<div class="movie-list">
+        <div class="movie-list">
+          <a class="movie-card" href="https://youtu.be/Bcth0WHVnDg?si=fMxDyYdTLvDZqW3K" target="_blank" rel="noopener">
+            <img src="Nekoサムネ.JPG" alt="コンセプト評価 推しカメラ｜KO.REN（小清水蓮） ♫Neko（ねこ）">
+            <p>コンセプト評価 推しカメラ｜KO.REN（小清水蓮） ♫Neko（ねこ）</p>
+          </a>
 
-  <a class="movie-card" href="https://youtu.be/Bcth0WHVnDg?si=fMxDyYdTLvDZqW3K" target="_blank" rel="noopener">
-    <img src="Nekoサムネ.JPG" alt="コンセプト評価 推しカメラ｜KO.REN（小清水蓮） ♫Neko（ねこ）">
-    <p>コンセプト評価 推しカメラ｜KO.REN（小清水蓮） ♫Neko（ねこ）</p>
-  </a>
+          <a class="movie-card" href="https://youtu.be/J7PNAfCtQKc?si=3gGqD6AJos9em8B5" target="_blank" rel="noopener">
+            <img src="BECLASSICサムネ.JPG" alt="ポジション評価 推しカメラ｜KO.REN（小清水蓮） JO1 ♫BE CLASSIC">
+            <p>ポジション評価 推しカメラ｜KO.REN（小清水蓮） JO1 ♫BE CLASSIC</p>
+          </a>
 
-  <a class="movie-card" href="https://youtu.be/J7PNAfCtQKc?si=3gGqD6AJos9em8B5" target="_blank" rel="noopener">
-    <img src="BECLASSICサムネ.JPG" alt="ポジション評価 推しカメラ｜KO.REN（小清水蓮） JO1 ♫BE CLASSIC">
-    <p>ポジション評価 推しカメラ｜KO.REN（小清水蓮） JO1 ♫BE CLASSIC</p>
-  </a>
+          <a class="movie-card" href="https://youtu.be/MnwWzUlB8TA?si=dlZtudsGNNF3SNc8" target="_blank" rel="noopener">
+            <img src="BiteMeサムネ.JPG" alt="グループバトル推しカメラ｜KO.REN（小清水蓮） | ENHYPEN ♫Bite Me ［2組］">
+            <p>グループバトル推しカメラ｜KO.REN（小清水蓮） | ENHYPEN ♫Bite Me ［2組］</p>
+          </a>
 
-  <a class="movie-card" href="https://youtu.be/MnwWzUlB8TA?si=dlZtudsGNNF3SNc8" target="_blank" rel="noopener">
-    <img src="BiteMeサムネ.JPG" alt="グループバトル推しカメラ｜KO.REN（小清水蓮） | ENHYPEN ♫Bite Me ［2組］">
-    <p>グループバトル推しカメラ｜KO.REN（小清水蓮） | ENHYPEN ♫Bite Me ［2組］</p>
-  </a>
-
-  <a class="movie-card" href="https://youtu.be/JyjjPI3Iyrs?si=jhbUwgmdV_bqvLlp" target="_blank" rel="noopener">
-    <img src="新世界サムネ.JPG" alt="推しカメラ｜KO.REN（小清水蓮）新世界（SHINSEKAI）">
-    <p>推しカメラ｜KO.REN（小清水蓮）新世界（SHINSEKAI）</p>
-  </a>
-</div>
+          <a class="movie-card" href="https://youtu.be/JyjjPI3Iyrs?si=jhbUwgmdV_bqvLlp" target="_blank" rel="noopener">
+            <img src="新世界サムネ.JPG" alt="推しカメラ｜KO.REN（小清水蓮）新世界（SHINSEKAI）">
+            <p>推しカメラ｜KO.REN（小清水蓮）新世界（SHINSEKAI）</p>
+          </a>
+        </div>
       </div>
     </section>
 
